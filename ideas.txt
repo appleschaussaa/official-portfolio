@@ -1,0 +1,104 @@
+Ideas for the future
+
+use some sort of transition on the project cards
+or have the grid size of the cards become wider upon hovering
+
+--- system preference dark/light mode:
+import * as React from 'react';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+
+function App() {
+  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)');
+
+  const theme = React.useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: prefersDarkMode ? 'dark' : 'light',
+        },
+      }),
+    [prefersDarkMode],
+  );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Routes />
+    </ThemeProvider>
+  );
+}
+
+--- for getting themes to you JSX:
+import { Box, ThemeProvider, createTheme } from '@mui/system';
+
+const theme = createTheme({
+  palette: {
+    background: {
+      paper: '#fff',
+    },
+    text: {
+      primary: '#173A5E',
+      secondary: '#46505A',
+    },
+    action: {
+      active: '#001E3C',
+    },
+    success: {
+      dark: '#009688',
+    },
+  },
+});
+
+export default function Example() 
+  return 
+    <ThemeProvider theme={theme}>
+          <Box
+        sx={{
+          bgcolor: 'background.paper',
+          boxShadow: 1,
+          borderRadius: 2,
+          p: 2,
+          minWidth: 300,
+        }}
+      >
+        <Box sx={{ color: 'text.secondary' }}>Sessions</Box>
+        <Box sx={{ color: 'text.primary', fontSize: 34, fontWeight: 'medium' }}>
+          98.3 K
+        </Box>
+
+
+--- the initial app display was too cool to delete entirely:
+                <div className="App-body">
+                    <img src={logo} className="App-logo" alt="logo" />
+                    <p>
+                        Edit <code>src/App.js</code> and save to reload.
+                    </p>
+                    <a
+                        className="App-link"
+                        href="https://reactjs.org"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Learn React
+                    </a>
+                </div>
+
+
+--- for changing typology themes:
+  components: {
+    MuiTypography: {
+      defaultProps: {
+        variantMapping: {
+          h1: 'h2',
+          h2: 'h2',
+          h3: 'h2',
+          h4: 'h2',
+          h5: 'h2',
+          h6: 'h2',
+          subtitle1: 'h2',
+          subtitle2: 'h2',
+          body1: 'span',
+          body2: 'span',
+		}}}}
