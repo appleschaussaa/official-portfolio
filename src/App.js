@@ -2,25 +2,21 @@ import * as React from "react";
 import "./App.css";
 import { Header, Footer } from "./components/index";
 import Homepage from "./pages/Homepage";
-import { Container } from "@mui/material";
+import { Container, Box } from "@mui/material";
 // import { ThemeProvider, createTheme } from "@mui/material";
-
 
 function App() {
     return (
         <>
             {/* <ThemeProvider theme={theme}> */}
-                <Container sx={{ margins: 2, width:"lg" }}>
+            <Container 
+                sx={{ minHeight: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}
+            // sx={{ margins: 2, height: "100%", width: "100%" }}
+            >
                     <Header />
-                </Container>
-                <Container sx={{ margins: 2, width:"lg", justifyContent: "normal", alignItems: "center" }}>
                     <Homepage />
-                </Container>
-                <Container
-                    sx={{ width:"lg", justifyContent: "normal", alignItems: "center" }}
-                >
                     <Footer />
-                </Container>
+            </Container>
             {/* </ThemeProvider> */}
         </>
     );

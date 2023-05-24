@@ -13,3 +13,17 @@ code {
     monospace;
 }
 
+html,
+body,
+#root,
+.app,
+.content {
+  height: 100%;
+  width: 100%;
+}
+
+.app {
+  display: flex;
+  position: relative;
+}
+

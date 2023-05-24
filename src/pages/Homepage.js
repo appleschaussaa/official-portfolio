@@ -8,9 +8,10 @@ const Homepage = () => {
     return (
         <>
             <Box
-                component="div"
                 sx={{
-                    // height: "80vh",
+                    width: "100%",
+                    mb: 1,
+                    mt: 1,
                 }}
             >
                 {path === "/" && <About />}

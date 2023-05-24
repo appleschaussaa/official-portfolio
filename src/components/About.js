@@ -6,21 +6,17 @@ const About = () => {
         <>
             <Container
                 sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    // whiteSpace: "normal",
-                    // p: 1,
-                    justifyContent: "center",
-                    alignItems: "center",
+                    border: 1,
+                    borderRadius: 3,
                 }}
             >
                 <Typography
                     variant="h4"
                     component="h4"
                     sx={{
-                        justifyContent: "center",
-                        alignItems: "center",
-                        borderRadius: 2,
+                        textAlign: "center",
+                        borderRadius: 3,
+                        m: 2,
                     }}
                 >
                     About Me page

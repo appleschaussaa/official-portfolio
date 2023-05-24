@@ -9,7 +9,9 @@ import {
     Collapse,
     IconButton,
     Typography,
+    Container,
     Grid,
+    Box,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { project } from "../utils/Data";
@@ -46,56 +48,78 @@ const Project = () => {
     };
 
     return (
-        <div>
-            <Grid container>
-			{/* pacing={}> */}
-                {project.slice(0, 4).map((project, index) => (
-                    <Grid item xs={6} md={6} key={index}>
-                        <Card
-                            variant="outlined"
-                            sx={{ flexDirection: "row", Height: 400, width: 500, margin: 1 }}
+        // <div>
+        // <Grid
+        //     container
+        //     spacing={0}
+        //     sx={{ justifyContent: "center", alignItems: "center" }}
+        // >
+        // <Box
+        //     sx={{ display: "flex"}}>
+        <Container sx={{ display: "flex", flexWrap: "wrap" }}>
+            {project.slice(0, 4).map((project, index) => (
+                <Box
+                    key={index}
+                    sx={{
+                        flex: "0 0 50%",
+                        display: "flex",
+                        justifyContent: "center",
+                        mb: 2,
+                    }}
+                >
+                    <Card
+                        variant="outlined"
+                        sx={{
+                            // display: "flex",
+                            Height: 400,
+                            width: 500,
+                            mb: 2,
+                            // padding: 0,
+                            // alignItems: "center",
+                            // boxSizing: "border-box",
+                            border: 2,
+                        }}
+                    >
+                        <CardMedia
+                            component="img"
+                            height="250"
+                            width="200px"
+                            image={project.image}
+                            alt={project.alt}
+                        />
+                        <CardContent>
+                            <Typography variant="body2" color="text.secondary">
+                                {project.maintext}
+                            </Typography>
+                        </CardContent>
+                        <CardActions disableSpacing>
+                            <ExpandMore
+                                expand={expanded[index].expanded}
+                                onClick={createExpandHandler(index)}
+                                aria-expanded={expanded[index].expanded}
+                                aria-label="show more"
+                            >
+                                <ExpandMoreIcon />
+                            </ExpandMore>
+                        </CardActions>
+                        <Collapse
+                            in={expanded[index].expanded}
+                            timeout="auto"
+                            unmountOnExit
                         >
-                            <CardMedia
-                                component="img"
-                                height="250"
-								// width="200px"
-                                image={project.image}
-                                alt={project.alt}
-                            />
                             <CardContent>
-                                <Typography
-                                    variant="body2"
-                                    color="text.secondary"
-                                >
-                                    {project.maintext}
+                                <Typography paragraph>
+                                    {project.fulltext}
                                 </Typography>
                             </CardContent>
-                            <CardActions disableSpacing>
-                                <ExpandMore
-                                    expand={expanded[index].expanded}
-                                    onClick={createExpandHandler(index)}
-                                    aria-expanded={expanded[index].expanded}
-                                    aria-label="show more"
-                                >
-                                    <ExpandMoreIcon />
-                                </ExpandMore>
-                            </CardActions>
-                            <Collapse
-                                in={expanded[index].expanded}
-                                timeout="auto"
-                                unmountOnExit
-                            >
-                                <CardContent>
-                                    <Typography paragraph>
-                                        {project.fulltext}
-                                    </Typography>
-                                </CardContent>
-                            </Collapse>
-                        </Card>
-                    </Grid>
-                ))}
-            </Grid>
-        </div>
+                        </Collapse>
+                    </Card>
+                </Box>
+            ))}
+        </Container>
+        /* </Box> */
+        // </Grid>
+        // </div>
     );
 };
 

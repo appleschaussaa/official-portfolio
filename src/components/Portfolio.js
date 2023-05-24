@@ -5,27 +5,35 @@ import { Project } from ".";
 const Portfolio = () => {
     return (
         <>
-            <Box sx={{ border: 1, borderRadius: 2, m: 1, }}>
-                <Container>
-                    <Typography
-                        variant="h4"
-                        component="h4"
-                        sx={{
-                            justifyContent: "center",
-                            alignItems: "center",
-                            borderRadius: 3,
-                        }}
-                    >
+            <Container
+                sx={{
+                    border: 1,
+                    // m: 1,
+                    justifyContent: "center",
+                    alignItem: "center",
+                    borderRadius: 3,
+                }}
+            >
+                <Box
+                sx={{
+                    justifyContent: "center",
+                    alignContent: "center"
+                }}
+                >
+                <Typography
+                    variant="h4"
+                    component="h4"
+                    sx={{
+                        textAlign: "center",
+                        borderRadius: 3,
+                        m: 2,
+                    }}
+                >
                         Portfolio page
                     </Typography>
-                </Container>
-                <Project
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                    }}
-                />
-            </Box>
+                </Box>
+                <Project />
+            </Container>
         </>
     );
 };

@@ -11,8 +11,22 @@ function handleClick(event) {
 
 const Header = () => {
     return (
-        <Box className="Header" sx={{ borderRadius: 2, height: 80 }}>
-            <Breadcrumbs separator="›" color="white" aria-label="breadcrumb" onClick={handleClick} sx={{}}>
+        <Box
+            className="Header"
+            sx={{
+                borderBottomLeftRadius: 8,
+                borderBottomRightRadius: 8,
+                height: 55,
+                width: "100%",
+            }}
+        >
+            <Breadcrumbs
+                separator="›"
+                color="white"
+                aria-label="breadcrumb"
+                onClick={handleClick}
+                sx={{}}
+            >
                 <Link underline="hover" color="white" href="/">
                     <Typography>Home</Typography>
                 </Link>
