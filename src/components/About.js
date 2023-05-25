@@ -8,6 +8,11 @@ const About = () => {
                 sx={{
                     border: 1,
                     borderRadius: 3,
+                    // display: "inline-flex",
+                    direction: "row",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    width: 4/5,
                 }}
             >
                 <Typography
@@ -21,8 +26,8 @@ const About = () => {
                 >
                     About Me page
                 </Typography>
-                <Typography>Lorem</Typography>
-                <Box sx={{ width: 4 / 5 }}>
+                <Typography sx={{ textAlign: "center", }}>Lorem</Typography>
+                <Typography sx={{ textAlign: "center", }}>
                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
                     nostrum explicabo accusantium, et illum officiis tempore
                     laboriosam vero adipisci facere in earum deleniti ratione
@@ -74,7 +79,7 @@ const About = () => {
                     enim! Commodi culpa nam maxime quidem, at optio eos
                     asperiores reprehenderit, a minima accusantium rerum,
                     reiciendis molestiae esse expedita suscipit error?
-                </Box>
+                </Typography>
             </Container>
         </>
     );
