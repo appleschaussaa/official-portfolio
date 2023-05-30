@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, TextField, Typography, Button, Container } from "@mui/material";
+import { UseableButton } from ".";
 
 const Contact = () => {
     return (
@@ -88,13 +89,14 @@ const Contact = () => {
                         ml: 2,
                     }}
                 />
-                <Button
+                {/* <Button
                     variant="contained"
                     color="primary"
                     sx={{ width: "10%", my: 2, ml: 2 }}
                 >
                     Submit
-                </Button>
+                </Button> */}
+                <UseableButton />
             </Box>
         </Container>
     );

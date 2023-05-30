@@ -1,5 +1,5 @@
-import constructDaily from "../images/Construct-Daily.png";
-import cheersCheck from "../images/Cheers-check.png"
+import constructDaily from "../static/images/Construct-Daily.png";
+import cheersCheck from "../static/images/Cheers-check.png"
 
 export const project = [
     {

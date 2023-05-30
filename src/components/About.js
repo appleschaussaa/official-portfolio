@@ -1,6 +1,7 @@
 import React from "react";
-import { Box, Container, Typography, Card, CardMedia } from "@mui/material";
-import Selfie from "../images/bootcamp-selfie.jpg"
+import { Box, Container, Typography, Card, CardMedia, Avatar } from "@mui/material";
+import Selfie from "../static/images/bootcamp-selfie.jpg";
+import { spacing } from "@mui/system";
 
 const About = () => {
     return (
@@ -9,14 +10,21 @@ const About = () => {
                 sx={{
                     // border: 1,
                     borderRadius: 3,
-                    display: "flex",
-                    flexDirection: "column",
+                    // display: "flex",
+                    // flexDirection: "column",
                     alignItems: "top",
                     height: "80vh",
                     width: "80%",
                 }}
             >
-                <Box>
+                <Box
+                    sx={
+                        {
+                            // display: "flex",
+                            // flexDirection: "column",
+                        }
+                    }
+                >
                     <Typography
                         variant="h4"
                         component="h4"
@@ -24,23 +32,32 @@ const About = () => {
                             textAlign: "center",
                             borderRadius: 3,
                             m: 2,
+                            width: "100%",
                         }}
                     >
                         About Me page
                     </Typography>
                     <Typography sx={{ textAlign: "center" }}>Lorem</Typography>
+                </Box>
+                <Box 
+                    sx={{ 
+                        display: "flex",
+                        spacing: 0, 
+                        }}
+                >
                     <Typography
                         sx={{
-                            height: "70%",
-                            width: "60%",
+                            height: "500px",
+                            width: "40%",
                             display: "flex",
-                            order: 0,
-                            flexDirection: "column",
+                            // order: 1,
+                            // flexDirection: "row",
+                            direction: "left",
                             // flex: 1,
-                            justifyContent: "center",
+                            // justifyContent: "center",
                             m: 1,
                             border: 2,
-                            // pt: 3,
+                            pt: 5,
                         }}
                     >
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -52,15 +69,18 @@ const About = () => {
                         rerum, reiciendis molestiae esse expedita suscipit
                         error? Lorem ipsum, dolor sit amet consectetur
                     </Typography>
-                    <Card 
-                        sx={{ 
-                            display: "flex", 
-                            order: 1, 
-                            flexDirection: "row", 
-                            direction: "right", 
-                            flex: "shrink", 
-                            height: "50%", 
-                            width: "20%"  }}
+                    {/* <Card
+                        sx={{
+                            display: "flex",
+                            flexWrap: "wrap",
+                            // order: 2,
+                            // flexDirection: "row",
+                            direction: "right",
+                            // flex: "shrink",
+                            height: "50",
+                            width: "30%",
+                            // flexShrink: 1,
+                        }}
                     >
                         <CardMedia
                             component="img"
@@ -69,7 +89,12 @@ const About = () => {
                             alt="portrait picture of myself"
                             image={Selfie}
                         />
-                    </Card>
+                    </Card> */}
+                    <Avatar 
+                        alt="My portrait picture" 
+                        src={Selfie} 
+                        sx={{ width: "200px", height: "200px" }}
+                    />
                 </Box>
                 {/* <Box 
                         sx={{

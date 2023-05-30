@@ -5,3 +5,4 @@ export { default as Project } from "./Projects";
 export { default as Resume } from "./Resume";
 export { default as Contact } from "./Contact";
 export { default as Header } from "./Header";
+export { default as UseableButton } from "./Button";
