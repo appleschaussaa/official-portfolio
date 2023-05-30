@@ -9,6 +9,7 @@ const Homepage = () => {
         <>
             <Box
                 sx={{
+                    height: "100%",
                     width: "100%",
                     mb: 1,
                     mt: 1,
