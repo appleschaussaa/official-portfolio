@@ -31,33 +31,38 @@ const About = () => {
                         sx={{
                             textAlign: "center",
                             borderRadius: 3,
-                            m: 2,
+                            mb: 2,
                             width: "100%",
                         }}
                     >
-                        About Me page
+                        About Me
                     </Typography>
                     <Typography sx={{ textAlign: "center" }}>Lorem</Typography>
                 </Box>
                 <Box 
                     sx={{ 
                         display: "flex",
-                        spacing: 0, 
+                        height: 500,
+                        spacing: 0,
+                        border: 2 
                         }}
                 >
                     <Typography
                         sx={{
-                            height: "500px",
-                            width: "40%",
+                            height: "90%",
+                            width: "45%",
                             display: "flex",
                             // order: 1,
-                            // flexDirection: "row",
+                            flexDirection: "column",
                             direction: "left",
                             // flex: 1,
-                            // justifyContent: "center",
+                            justifyContent: "center",
                             m: 1,
+                            mt: 2,
                             border: 2,
-                            pt: 5,
+                            borderRadius: 2,
+                            p: 1,
+                            background: "#FEF9E9"
                         }}
                     >
                         Lorem ipsum, dolor sit amet consectetur adipisicing
@@ -65,6 +70,10 @@ const About = () => {
                         officiis tempore laboriosam vero adipisci facere in
                         earum deleniti ratione nisi, esse consequuntur aliquam
                         suscipit enim! Commodi culpa nam maxime quidem, at optio
+                        eos asperiores reprehenderit, a minima accusantium
+                        rerum, reiciendis molestiae esse expedita suscipit
+                        error? Lorem ipsum, dolor sit amet consectetur suscipit 
+                        enim!Commodi culpa nam maxime quidem, at optio
                         eos asperiores reprehenderit, a minima accusantium
                         rerum, reiciendis molestiae esse expedita suscipit
                         error? Lorem ipsum, dolor sit amet consectetur
@@ -93,7 +102,14 @@ const About = () => {
                     <Avatar 
                         alt="My portrait picture" 
                         src={Selfie} 
-                        sx={{ width: "200px", height: "200px" }}
+                        sx={{ 
+                            width: 150, 
+                            height: 190,
+                            m: 1,
+                            mt: 2,
+                            ml: "180px",
+                            p: 2, 
+                        }}
                     />
                 </Box>
                 {/* <Box 

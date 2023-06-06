@@ -105,3 +105,12 @@ export default function Example()
 
 
 --- make the ability to download resume if they want
+
+--- leads for storing users input from contact page:
+
+var fs = require('fs');
+fs.writeFile('/test.txt', 'Cool, I can do this in the browser!', function(err) {
+  fs.readFile('/test.txt', function(err, contents) {
+    console.log(contents.toString());
+  });
+});

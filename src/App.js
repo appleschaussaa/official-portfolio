@@ -21,17 +21,20 @@ const theme = createTheme({
     },
     components: {
         MuiButton: {
-          styleOverrides: {
-            root: {
-            //   fontSize:
+            styleOverrides: {
+                root: {
+                    //   fontSize:
+                },
             },
-          },
         },
-      },
+    },
+    // palette: {
+    //     mode: "dark",
+        // label: "black",
+    // },
 });
 
 function App() {
-
     // const theme = createTheme({
     //     breakpoints: {
     //         values: {
@@ -52,6 +55,9 @@ function App() {
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
+                        // backgroundColor: "#DCDCDC",
+                        backgroundColor: "#FDF5E6",
+                        // backgroundColor: "#FAFAFA",
                     }}
                 >
                     <Header />

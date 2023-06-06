@@ -10,7 +10,7 @@ const Footer = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 // position: "fixed",
-                background: "#282c34",
+                background: "#483D8B",
                 color: "white",
                 height: 45,
                 width: "100%",
@@ -18,6 +18,9 @@ const Footer = () => {
                 bottom: 0,
                 borderTopLeftRadius: 8,
                 borderTopRightRadius: 8,
+                border: 2,
+                borderBottom: 0,
+                borderColor: "#ffff",
             }} 
             // component="footer"
         >

@@ -18,6 +18,9 @@ const Header = () => {
                 borderBottomRightRadius: 8,
                 height: 55,
                 width: "100%",
+                border: 2,
+                borderColor: "#ffff",
+                borderTop:0,
             }}
         >
             <Breadcrumbs

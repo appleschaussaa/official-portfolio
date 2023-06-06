@@ -13,10 +13,13 @@ const UseableButton = () => {
             sx={{ 
                 width: "10%", 
                 my: 2, 
-                ml: 2 
+                ml: 2,
+                backgroundColor: "#483D8B",
+                opacity: "75%",
+                color: "#ffff",
             }}
         >
-            Contained
+            Submit
         </Button>
     );
 };
