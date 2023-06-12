@@ -5,6 +5,17 @@ import { Project } from ".";
 const Portfolio = () => {
     return (
         <>
+            {/* <Typography
+                variant="h4"
+                component="h4"
+                sx={{
+                    textAlign: "center",
+                    borderRadius: 3,
+                    m: 2,
+                }}
+            >
+                Portfolio page
+            </Typography> */}
             <Container
                 sx={{
                     border: 1,
@@ -14,7 +25,7 @@ const Portfolio = () => {
                     borderRadius: 3,
                 }}
             >
-                <Box
+                {/* <Box
                     sx={{
                         justifyContent: "center",
                         alignContent: "center",
@@ -32,10 +43,10 @@ const Portfolio = () => {
                     >
                         Portfolio page
                     </Typography>
-                </Box>
+                </Box> */}
                 <Box
                     sx={{
-                        marginTop: "80px",
+                        marginTop: "10px",
                         // margin: "40px"
                     }}
                 >

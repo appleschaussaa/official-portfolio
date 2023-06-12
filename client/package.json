@@ -1,5 +1,5 @@
 {
-  "name": "official-portfolio",
+  "name": "reactive-portfolio",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.15",
     "@emotion/react": "^11.10.8",
     "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",

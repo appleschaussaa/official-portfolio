@@ -4,6 +4,8 @@ import { Header, Footer } from "./components/index";
 import Homepage from "./pages/Homepage";
 import { Container, Box } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
 
 const theme = createTheme({
     breakpoints: {
@@ -30,41 +32,37 @@ const theme = createTheme({
     },
     // palette: {
     //     mode: "dark",
-        // label: "black",
+    // label: "black",
     // },
 });
 
-function App() {
-    // const theme = createTheme({
-    //     breakpoints: {
-    //         values: {
-    //             mobile: 0,
-    //             tablet: 640,
-    //             laptop: 1024,
-    //             desktop: 1200,
-    //         },
-    //     },
-    // });
+const client = new ApolloClient({
+    uri: "https://github.com/appleschaussaa/official-portfolio/",
+    cache: new InMemoryCache(),
+  });
 
+function App() {
     return (
         <>
-            <ThemeProvider theme={theme}>
-                <Container
-                    sx={{
-                        minHeight: "100%",
-                        display: "flex",
-                        flexDirection: "column",
-                        alignItems: "center",
-                        // backgroundColor: "#DCDCDC",
-                        backgroundColor: "#FDF5E6",
-                        // backgroundColor: "#FAFAFA",
-                    }}
-                >
-                    <Header />
-                    <Homepage />
-                    <Footer />
-                </Container>
-            </ThemeProvider>
+            <ApolloProvider client={client}>
+                <ThemeProvider theme={theme}>
+                    <Container
+                        sx={{
+                            minHeight: "100%",
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            // backgroundColor: "#DCDCDC",
+                            backgroundColor: "#FDF5E6",
+                            // backgroundColor: "#FAFAFA",
+                        }}
+                    >
+                        <Header />
+                        <Homepage />
+                        <Footer />
+                    </Container>
+                </ThemeProvider>
+            </ApolloProvider>
         </>
     );
 }

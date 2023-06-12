@@ -17,7 +17,7 @@ const About = () => {
                     width: "80%",
                 }}
             >
-                <Box
+                {/* <Box
                     sx={
                         {
                             // display: "flex",
@@ -38,7 +38,7 @@ const About = () => {
                         About Me
                     </Typography>
                     <Typography sx={{ textAlign: "center" }}>Lorem</Typography>
-                </Box>
+                </Box> */}
                 <Box 
                     sx={{ 
                         display: "flex",

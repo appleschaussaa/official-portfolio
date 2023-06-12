@@ -5,6 +5,7 @@ import { Box, TextField, Typography, Button, Container } from "@mui/material";
 const Contact = () => {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
+    const [email, setEmail] = useState("");
     const [feedback, setFeedback] = useState("");
     const [savedData, setSavedData] = useState(null);
 
@@ -13,6 +14,7 @@ const Contact = () => {
         const userInput = {
             firstName,
             lastName,
+            email,
             feedback,
         };
 
@@ -22,11 +24,11 @@ const Contact = () => {
 
     useEffect(() => {
         console.log("Saved Data:", savedData);
-      }, [savedData]);
+    }, [savedData]);
 
     return (
         <Container>
-            <Box
+            {/* <Box
                 sx={{
                     display: "flex",
                     flexDirection: "column",
@@ -53,7 +55,7 @@ const Contact = () => {
                 >
                     Feel free to reach out!
                 </Typography>
-            </Box>
+            </Box> */}
             <Box
                 sx={{
                     display: "flex",
@@ -63,23 +65,78 @@ const Contact = () => {
                     height: "60vh",
                     border: 1,
                     borderRadius: 2,
-                    ml: 2,
+                    ml: 4,
                     p: 2,
                 }}
             >
+                <Box sx={{ display: "flex", gap: 1, width: 500 }}>
+                    <TextField
+                        required
+                        id="FirstNameInput"
+                        name="FirstNameInput"
+                        label="First Name"
+                        variant="filled"
+                        sx={{ 
+                            flex: 1, 
+                            // width: 380,
+                            border: 3,
+                            borderColor: "#ffff",
+                            borderRadius: 2,
+                            my: 1,
+                            ml: 2,
+                            background: "#483D8B",
+                            opacity: "75%",
+                            "& label": {
+                                color: "#ffffff",
+                            },
+                            "& input": {
+                                color: "#ffffff",
+                            },
+                            "& .MuiInputBase-root": {
+                                color: "#ffffff",
+                            },
+                        }}
+                        value={firstName}
+                        onChange={(e) => setFirstName(e.target.value)}
+                    />
+                    <TextField
+                        required
+                        id="LastNameInput"
+                        name="LastNameInput"
+                        label="Last Name"
+                        variant="filled"
+                        sx={{
+                            flex: 1,  
+                            // width: 400,
+                            border: 3,
+                            borderColor: "#ffff",
+                            borderRadius: 2,
+                            my: 1,
+                            // ml: 2,
+                            background: "#483D8B",
+                            opacity: "75%",
+                            "& label": {
+                                color: "#ffffff",
+                            },
+                            "& input": {
+                                color: "#ffffff",
+                            },
+                            "& .MuiInputBase-root": {
+                                color: "#ffffff",
+                            },
+                        }}
+                        value={lastName}
+                        onChange={(e) => setLastName(e.target.value)}
+                    />
+                </Box>
                 <TextField
                     required
-                    id="FirstNameInput"
-                    name="FirstNameInput"
-                    label="First Name"
+                    id="EmailInput"
+                    name="EmailInput"
+                    label="Email"
                     variant="filled"
-                    // color="secondary"
-                    // focused
                     sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                        justifyContent: "center",
-                        width: 300,
+                        width: 480,
                         border: 3,
                         borderColor: "#ffff",
                         borderRadius: 2,
@@ -103,43 +160,8 @@ const Contact = () => {
                             color: "#ffffff",
                         },
                     }}
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
-                />
-                <TextField
-                    required
-                    id="LastNameInput"
-                    name="LastNameInput"
-                    label="Last Name"
-                    variant="filled"
-                    // focused
-                    sx={{
-                        width: 300,
-                        border: 3,
-                        borderColor: "#ffff",
-                        borderRadius: 2,
-                        my: 1,
-                        ml: 2,
-                        background: "#483D8B",
-                        opacity: "75%",
-                        "& label": {
-                            color: "#ffffff",
-                        },
-                        "& input": {
-                            color: "#ffffff",
-                        },
-                        "& .MuiInputBase-root": {
-                            color: "#ffffff",
-                        },
-                    }}
-                    InputLabelProps={{
-                        focused: false,
-                        sx: {
-                            color: "#ffffff",
-                        },
-                    }}
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
                 <TextField
                     id="FeedbackInput"
@@ -150,7 +172,7 @@ const Contact = () => {
                     variant="filled"
                     // focused
                     sx={{
-                        width: 500,
+                        width: 550,
                         border: 3,
                         borderColor: "#ffff",
                         borderRadius: 2,
