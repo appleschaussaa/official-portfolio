@@ -17,28 +17,6 @@ const About = () => {
                     width: "80%",
                 }}
             >
-                {/* <Box
-                    sx={
-                        {
-                            // display: "flex",
-                            // flexDirection: "column",
-                        }
-                    }
-                >
-                    <Typography
-                        variant="h4"
-                        component="h4"
-                        sx={{
-                            textAlign: "center",
-                            borderRadius: 3,
-                            mb: 2,
-                            width: "100%",
-                        }}
-                    >
-                        About Me
-                    </Typography>
-                    <Typography sx={{ textAlign: "center" }}>Lorem</Typography>
-                </Box> */}
                 <Box 
                     sx={{ 
                         display: "flex",
@@ -50,7 +28,7 @@ const About = () => {
                     <Typography
                         sx={{
                             height: "90%",
-                            width: "45%",
+                            width: "40%",
                             display: "flex",
                             // order: 1,
                             flexDirection: "column",
@@ -62,6 +40,7 @@ const About = () => {
                             border: 2,
                             borderRadius: 2,
                             p: 1,
+                            px: 2,
                             background: "#FEF9E9"
                         }}
                     >

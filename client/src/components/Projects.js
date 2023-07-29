@@ -68,14 +68,14 @@ const Project = () => {
           >
             <CardMedia
               component="img"
-              height="250"
+              height="230"
               width="200px"
               image={project.image}
               alt={project.alt}
             />
             <CardContent
               sx={{
-                maxHeight: expandedIndexes.includes(index) ? "100%" : 200,
+                maxHeight: expandedIndexes.includes(index) ? "90%" : 180,
                 overflow: "auto",
                 backgroundColor: "#FEF9E9",
               }}

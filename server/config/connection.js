@@ -1,7 +1,8 @@
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/Construct-Daily"
-);
+mongoose.connect(process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/official-portfolio", {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 module.exports = mongoose.connection;

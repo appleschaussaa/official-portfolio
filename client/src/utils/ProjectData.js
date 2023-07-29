@@ -6,7 +6,7 @@ export const project = [
        image: `${constructDaily}`,
        alt: "Construct Daily App",
        maintext: "This was the final project from my web programming bootcamp call Construct Daily. It is a full-stack React App that a construction employee can create daily logs for each project and save it",
-       fulltext: "Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10 minutes."
+       fulltext: "Heat 1/2 cup of the broth in a pot until simmering, add saffron and set"
     },
     {
         image: `${cheersCheck}`,

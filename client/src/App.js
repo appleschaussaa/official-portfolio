@@ -1,10 +1,20 @@
 import * as React from "react";
+// import PropTypes from 'prop-types';
 import "./App.css";
 import { Header, Footer } from "./components/index";
-import Homepage from "./pages/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
 import { Container, Box } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
 import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+// import {
+//     MemoryRouter,
+//     Route,
+//     Routes,
+//     Link,
+//     matchPath,
+//     useLocation,
+//   } from 'react-router-dom';
+//   import { StaticRouter } from 'react-router-dom/server';
 
 
 const theme = createTheme({
@@ -37,9 +47,41 @@ const theme = createTheme({
 });
 
 const client = new ApolloClient({
-    uri: "https://github.com/appleschaussaa/official-portfolio/",
+    uri: "/graphql",
     cache: new InMemoryCache(),
   });
+
+// const Router = (props) => {
+//     const { children } = props;
+//     if (typeof window === "undifined") {
+//         return <StaticRouter location="/draft">{children}</StaticRouter>
+//     };
+//     return (
+//         <MemoryRouter initialEntries={['/drafts']} initialIndex={0}>
+//           {children}
+//         </MemoryRouter>
+//       );
+// }
+
+// Router.propTypes = {
+//     children: PropTypes.node,
+//   };
+
+//   const ProperRoute = (patterns) => {
+//     const { pathname } = useLocation();
+  
+//     for (let i = 0; i < patterns.length; i += 1) {
+//       const pattern = patterns[i];
+//       const possibleMatch = matchPath(pattern, pathname);
+//       if (possibleMatch !== null) {
+//         return possibleMatch;
+//       }
+//     }
+  
+//     return null;
+//   }
+
+
 
 function App() {
     return (

@@ -75,6 +75,7 @@ const Header = () => {
                     }}
                 >
                     {getTitle()}
+
                 </Typography>
             </Box>
         </>
