@@ -5,14 +5,14 @@ export const project = [
     {
        image: `${constructDaily}`,
        alt: "Construct Daily App",
-       maintext: "This was the final project from my web programming bootcamp call Construct Daily. It is a full-stack React App that a construction employee can create daily logs for each project and save it",
-       fulltext: "Heat 1/2 cup of the broth in a pot until simmering, add saffron and set"
+       maintext: "This was the final project from my web development bootcamp call Construct Daily.",
+       fulltext: "It is a full-stack React App that a construction employee can create daily logs for each project and save it.",
     },
     {
         image: `${cheersCheck}`,
         alt: "Cheers Check",
-        maintext: "This was for the second project Cheers Check. It was the first full stack app I had worked on. It uses Node and React to create REST Apis, Handlebars for templating along with MySQL and Sequelize",
-        fulltext: "Continue with the actual details"
+        maintext: "This was for the second project from my web development bootcamp Cheers Check.",
+        fulltext: "It was the first full stack app I had worked on. It uses Node and React to create REST Apis, Handlebars for templating along with MySQL and Sequelize"
      },
      {
         image: "",

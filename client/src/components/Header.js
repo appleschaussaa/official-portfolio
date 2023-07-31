@@ -38,7 +38,7 @@ const Header = () => {
                     height: 55,
                     width: "100%",
                     border: 2,
-                    borderColor: "#ffff",
+                    borderColor: "#C7B6DC",
                     borderTop: 0,
                 }}
             >
@@ -72,6 +72,7 @@ const Header = () => {
                         border: 1,
                         borderRadius: 2,
                         m: 2,
+                        mb: 6,
                     }}
                 >
                     {getTitle()}

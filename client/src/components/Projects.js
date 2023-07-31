@@ -75,7 +75,7 @@ const Project = () => {
             />
             <CardContent
               sx={{
-                maxHeight: expandedIndexes.includes(index) ? "90%" : 180,
+                maxHeight: expandedIndexes.includes(index) ? "50%" : 150,
                 overflow: "auto",
                 backgroundColor: "#FEF9E9",
               }}
@@ -106,7 +106,7 @@ const Project = () => {
               timeout="auto"
               unmountOnExit
               sx={{
-                maxHeight: expandedIndexes.includes(index) ? "100%" : 0,
+                maxHeight: expandedIndexes.includes(index) ? "90%" : 0,
                 overflow: "hidden",
                 transition: "max-height 0.3s ease-out",
               }}
