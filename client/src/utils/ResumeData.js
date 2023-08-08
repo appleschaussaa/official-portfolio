@@ -17,20 +17,29 @@ const jobHistory = [
 
 const schoolHistory = [
     {
-        name:"",
-        startDate:"",
-        endDate:"",
+        name: "University of Washington Coding Bootcamp",
+        startDate: "Nov 1, 2022",
+        endDate: "May 1, 2023",
+        special: "Certificate in full stack Web Development"
     },
     {
-        name:"",
-        startDate:"",
-        endDate:"",
+        name: "Western Washington University",
+        startDate: "Sep 23, 2009",
+        endDate: "June 20, 2011",
+        special: "Majoring in Psychology and Computer Science",
     },
-    {
-        name:"",
-        startDate:"",
-        endDate:"",
-    },
+    // {
+    //     name: "",
+    //     startDate: "",
+    //     endDate: "",
+    //     special: "",
+    // },
 ];
 
-export { jobHistory, schoolHistory };
+const skillsHobbys = [
+    {
+
+    }
+]
+
+export { jobHistory, schoolHistory, skillsHobbys };

@@ -33,10 +33,16 @@ const Header = () => {
             <Box
                 className="Header"
                 sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                    justifyContent: "center",
                     borderBottomLeftRadius: 8,
                     borderBottomRightRadius: 8,
-                    height: 55,
+                    height: 65,
                     width: "100%",
+                    mb: 2,
+                    backgroundColor: "#483D8B",
                     border: 2,
                     borderColor: "#C7B6DC",
                     borderTop: 0,
@@ -47,7 +53,7 @@ const Header = () => {
                     color="#FDF5E6"
                     aria-label="breadcrumb"
                     onClick={handleClick}
-                    sx={{}}
+                    sx={{}} 
                 >
                     <Link underline="hover" color="white" href="/">
                         <Typography>Home</Typography>
@@ -63,16 +69,18 @@ const Header = () => {
                     </Link>
                 </Breadcrumbs>
             </Box>
-            <Box>
+            <Box component="div" sx={{ boxShadow: 5, mb: 3, p: "-1 1 1", borderRadius: 2 }}>
                 <Typography
-                    variant="h4"
-                    component="h4"
+                    variant="h3"
+                    component="h3"
                     sx={{
+                        display: "inline",
                         textAlign: "center",
-                        border: 1,
+                        textDecoration: "underline",
+                        color: "#483D8B",
+                        // border: 1,
                         borderRadius: 2,
-                        m: 2,
-                        mb: 6,
+                        p: 2
                     }}
                 >
                     {getTitle()}

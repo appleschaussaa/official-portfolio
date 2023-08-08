@@ -18,16 +18,13 @@
   min-height: 90vh;
 }
 
-.Header {
+/* .Header {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   background-color: #483D8B;
-  /* height: 50px; */
-  /* Padding: 10px; */
-  /* margin-bottom: 2px; */
-}
+} */
 
 .Footer {
   align-items: right;

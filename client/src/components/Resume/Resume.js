@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Container, Typography, Divider } from "@mui/material";
-import { jobHistory } from "../utils/ResumeData";
+import { Box, Container, Typography, Divider, List, ListItem, ListItemText } from "@mui/material";
+import { jobHistory, schoolHistory } from "../../utils/ResumeData";
 
 const Resume = () => {
     return (
@@ -10,6 +10,7 @@ const Resume = () => {
                 justifyContent: "space-evenly",
                 border: 1,
                 height: "70vh",
+                px: 50,
                 // flexDirection: "column",
             }}
         >
@@ -65,11 +66,11 @@ const Resume = () => {
                     </>
                 ))}
             </Box>
-            <Box sx={{ border: 1, width: 350, textAlign: "center" }}>
+            <Box sx={{ border: 1, width: 350, textAlign: "center", pt: 2, }}>
                 <Typography variant="h5" sx={{ mb: 3 }}>
                     Education
                 </Typography>
-                {jobHistory.map((job, index) => (
+                {schoolHistory.map((school, index) => (
                     <>
                         <Typography
                         variant="h6"
@@ -81,29 +82,30 @@ const Resume = () => {
                                 textDecorationLine: "underline" 
                             }}
                         >
-                            {`${job.company}`}
+                            {`${school.name}`}
                         </Typography>
                         <Typography
                             key={index}
                             sx={{ textAlign: "left", ml: 2, mb: 2, display: "flex",
                             flexDirection: "column", }}
                         >
-                            {`${job.title}`}
+                            {/* {`${job.title}`}
+                            <br></br> */}
+                            {`${school.startDate} - ${school.endDate}`}
                             <br></br>
-                            {`${job.startDate} - ${job.endDate}`}
-                            <br></br>
-                            {`Job description: ${job.description}`}
+                            {`description: ${school.special}`}
                             <Divider />
                         </Typography>
                     </>
                 ))}
             </Box>
-            <Container
+            <Box
                 sx={{
                     border: 1,
                     width: 350,
                     mx: 0,
                     px: 0,
+                    pt: 2,
                     display: "flex",
                     flexDirection: "column",
                 }}
@@ -118,13 +120,17 @@ const Resume = () => {
                         textAlign: "center",
                     }}
                 >
-                    <Typography variant="h5" sx={{ mb: 3 }}>
+                    <Typography variant="h5" sx={{ mb: 3, }}>
                         {" "}
                         Skills{" "}
                     </Typography>
-                    <Typography sx={{ textAlign: "left", ml: 1 }}>
-                        This is for my skills
-                    </Typography>
+                    <List>
+                    <ListItem sx={{ textAlign: "left", }}>
+                        <ListItemText sx={{  }}>
+                        Snowboarding, Backpacking
+                        </ListItemText>
+                    </ListItem>
+                    </List>
                 </Box>
                 <Box
                     sx={{
@@ -143,7 +149,7 @@ const Resume = () => {
                         This is for my interests and hobbies
                     </Typography>
                 </Box>
-            </Container>
+            </Box>
             {/* <Box sx={{ border: 1, maxWidth: 300, minWidth: 280, }}>
                 <Typography variant="h5">
                     {" "}

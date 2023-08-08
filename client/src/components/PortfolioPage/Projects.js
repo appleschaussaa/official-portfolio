@@ -13,7 +13,7 @@ import {
   Box,
 } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import { project } from "../utils/ProjectData";
+import { project } from "../../utils/ProjectData";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -50,7 +50,8 @@ const Project = () => {
             display: "flex",
             justifyContent: "center",
             mb: 2,
-            alignItems: "center",
+            py: 2,
+            alignItems: "stretch",
             "@media (min-width: 600px)": {
               flex: "0 0 calc(50% - 8px)",
               maxWidth: "calc(50% - 8px)",
@@ -60,10 +61,12 @@ const Project = () => {
           <Card
             variant="outlined"
             sx={{
-              height: expandedIndexes.includes(index) ? "auto" : "minContent",
+              height: expandedIndexes.includes(index) ? 500 : 400,
               width: 550,
               border: 1,
               boxShadow: "10px -5px 5px black",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
             <CardMedia
@@ -75,12 +78,12 @@ const Project = () => {
             />
             <CardContent
               sx={{
-                maxHeight: expandedIndexes.includes(index) ? "50%" : 150,
+                maxHeight: 300,
                 overflow: "auto",
-                backgroundColor: "#FEF9E9",
+                background: "#483D8B85",
               }}
             >
-              <Typography variant="body2" color="text.secondary">
+              <Typography paragraph>
                 {project.maintext}
               </Typography>
             </CardContent>
@@ -88,8 +91,9 @@ const Project = () => {
               disableSpacing
               sx={{
                 marginTop: "auto",
-                bottom: 0,
-                backgroundColor: "#FEF9E9",
+                height: 30,
+                background: "#483D8B85",
+                m: -1
               }}
             >
               <ExpandMore
@@ -111,7 +115,7 @@ const Project = () => {
                 transition: "max-height 0.3s ease-out",
               }}
             >
-              <CardContent sx={{ backgroundColor: "#FEF9E9", }}>
+              <CardContent sx={{ backgroundColor: "#483D8B85", }}>
                 <Typography paragraph>{project.fulltext}</Typography>
               </CardContent>
             </Collapse>

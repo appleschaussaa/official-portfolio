@@ -12,7 +12,7 @@ const Footer = () => {
                 // position: "fixed",
                 background: "#483D8B",
                 color: "white",
-                height: 45,
+                height: 50,
                 width: "100%",
                 marginTop: "auto",
                 bottom: 0,

@@ -1,11 +1,11 @@
 import * as React from "react";
-// import PropTypes from 'prop-types';
+// import PropTypes from "prop-types";
 import "./App.css";
-import { Header, Footer } from "./components/index";
+import { Header, Footer } from "./components/Route/index";
 import Homepage from "./pages/Homepage/Homepage";
 import { Container, Box } from "@mui/material";
 import { ThemeProvider, createTheme } from "@mui/material";
-import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 // import {
 //     MemoryRouter,
 //     Route,
@@ -13,9 +13,8 @@ import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
 //     Link,
 //     matchPath,
 //     useLocation,
-//   } from 'react-router-dom';
-//   import { StaticRouter } from 'react-router-dom/server';
-
+//   } from "react-router-dom";
+//   import { StaticRouter } from "react-router-dom/server";
 
 const theme = createTheme({
     breakpoints: {
@@ -40,48 +39,34 @@ const theme = createTheme({
             },
         },
     },
-    // palette: {
-    //     mode: "dark",
-    // label: "black",
-    // },
+    typography: {
+        fontFamily: ["Roboto Slab"].join(","),
+        // h3: {
+        //     fontSize: "1.2rem",
+        //     "@media (min-width:600px)": {
+        //         fontSize: "1.5rem",
+        //     },
+        //     [theme.breakpoints.up("md")]: {
+        //         fontSize: "2.4rem",
+        //     },
+        // },
+    },
 });
+
+// theme.typography.h3 = {
+//     fontSize: "1.2rem",
+//     "@media (min-width:600px)": {
+//         fontSize: "1.5rem",
+//     },
+//     [theme.breakpoints.up("md")]: {
+//         fontSize: "2.4rem",
+//     },
+// };
 
 const client = new ApolloClient({
     uri: "/graphql",
     cache: new InMemoryCache(),
-  });
-
-// const Router = (props) => {
-//     const { children } = props;
-//     if (typeof window === "undifined") {
-//         return <StaticRouter location="/draft">{children}</StaticRouter>
-//     };
-//     return (
-//         <MemoryRouter initialEntries={['/drafts']} initialIndex={0}>
-//           {children}
-//         </MemoryRouter>
-//       );
-// }
-
-// Router.propTypes = {
-//     children: PropTypes.node,
-//   };
-
-//   const ProperRoute = (patterns) => {
-//     const { pathname } = useLocation();
-  
-//     for (let i = 0; i < patterns.length; i += 1) {
-//       const pattern = patterns[i];
-//       const possibleMatch = matchPath(pattern, pathname);
-//       if (possibleMatch !== null) {
-//         return possibleMatch;
-//       }
-//     }
-  
-//     return null;
-//   }
-
-
+});
 
 function App() {
     return (
@@ -97,6 +82,7 @@ function App() {
                             // backgroundColor: "#DCDCDC",
                             backgroundColor: "#FDF5E6",
                             // backgroundColor: "#FAFAFA",
+                            fontFamily: "Roboto Slab Bold",
                         }}
                     >
                         <Header />

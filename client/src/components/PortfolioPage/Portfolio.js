@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
-import { Project } from ".";
+import { Project } from "../Route";
 
 const Portfolio = () => {
     return (
