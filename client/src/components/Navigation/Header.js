@@ -13,19 +13,19 @@ const Header = () => {
     const location = useLocation();
 
     const getTitle = () => {
-      const { pathname } = location;
-  
-      if (pathname === "/") {
-        return "Home";
-      } else if (pathname === "/portfolio") {
-        return "Portfolio";
-      } else if (pathname === "/resume") {
-        return "Resume";
-      } else if (pathname === "/contact") {
-        return "Contact";
-      } else {
-        return "About Me";
-      }
+        const { pathname } = location;
+
+        if (pathname === "/") {
+            return "Home";
+        } else if (pathname === "/portfolio") {
+            return "Portfolio";
+        } else if (pathname === "/resume") {
+            return "Resume";
+        } else if (pathname === "/contact") {
+            return "Contact";
+        } else {
+            return "About Me";
+        }
     };
 
     return (
@@ -46,6 +46,7 @@ const Header = () => {
                     border: 2,
                     borderColor: "#C7B6DC",
                     borderTop: 0,
+                    boxShadow: 6,
                 }}
             >
                 <Breadcrumbs
@@ -53,7 +54,7 @@ const Header = () => {
                     color="#FDF5E6"
                     aria-label="breadcrumb"
                     onClick={handleClick}
-                    sx={{}} 
+                    sx={{}}
                 >
                     <Link underline="hover" color="white" href="/">
                         <Typography>Home</Typography>
@@ -69,7 +70,16 @@ const Header = () => {
                     </Link>
                 </Breadcrumbs>
             </Box>
-            <Box component="div" sx={{ boxShadow: 5, mb: 3, p: "-1 1 1", borderRadius: 2 }}>
+            <Box
+                component="div"
+                sx={{
+                    // boxShadow: "11px -4px 8px black",
+                    boxShadow: 6,
+                    mb: 3,
+                    p: "-1px 1px 1px",
+                    borderRadius: 2,
+                }}
+            >
                 <Typography
                     variant="h3"
                     component="h3"
@@ -77,14 +87,14 @@ const Header = () => {
                         display: "inline",
                         textAlign: "center",
                         textDecoration: "underline",
+                        textDecorationThickness: "4",
                         color: "#483D8B",
                         // border: 1,
                         borderRadius: 2,
-                        p: 2
+                        p: 2,
                     }}
                 >
                     {getTitle()}
-
                 </Typography>
             </Box>
         </>

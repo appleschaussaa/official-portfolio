@@ -26,7 +26,7 @@ const schoolHistory = [
         name: "Western Washington University",
         startDate: "Sep 23, 2009",
         endDate: "June 20, 2011",
-        special: "Majoring in Psychology and Computer Science",
+        special: "studied towards a major in Psychology and Computer Science",
     },
     // {
     //     name: "",
@@ -38,7 +38,7 @@ const schoolHistory = [
 
 const skillsHobbys = [
     {
-
+        skillsArray: ["listening", "quick learner", "other stuff"]
     }
 ]
 

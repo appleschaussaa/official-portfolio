@@ -1,8 +1,22 @@
 import React from "react";
-import { Box, Container, Typography, Divider, List, ListItem, ListItemText } from "@mui/material";
-import { jobHistory, schoolHistory } from "../../utils/ResumeData";
+import {
+    Box,
+    Container,
+    Typography,
+    Divider,
+    List,
+    ListItem,
+    ListItemText,
+} from "@mui/material";
+import {
+    jobHistory,
+    schoolHistory,
+    skillsHobbys,
+} from "../../utils/ResumeData";
 
 const Resume = () => {
+    const [dense] = React.useState(true);
+
     return (
         <Container
             sx={{
@@ -10,51 +24,55 @@ const Resume = () => {
                 justifyContent: "space-evenly",
                 border: 1,
                 height: "70vh",
-                px: 50,
+                // px: 50,
                 // flexDirection: "column",
             }}
         >
-            {/* {resume.map((job, index) => (
-                <Box key={index} sx={{ border: 1, width: 350, textAlign: "center" }}>
-                    <Typography variant="h5" sx={{ mb: 3 }}>
-                        Job History
-                    </Typography>
-                    <Typography sx={{ textAlign: "left", ml: 1 }}>
-                        {job.company}
-                    </Typography>
-                    <Typography sx={{ textAlign: "left", ml: 1 }}>
-                        {job.title}
-                    </Typography>
-                    <Typography sx={{ textAlign: "left", ml: 1 }}>
-                        {`${job.startDate} - ${job.endDate}`}
-                    </Typography>
-                    <Typography sx={{ textAlign: "left", ml: 1 }}>
-                        {job.description}
-                    </Typography>
-                </Box>
-            ))} */}
-            <Box sx={{ border: 1, width: 350, textAlign: "center", pt: 2, }}>
-                <Typography variant="h5" sx={{ mb: 3 }}>
+            <Box 
+                sx={{ 
+                    border: 1, 
+                    width: 350, 
+                    textAlign: "center", 
+                    pt: 2, 
+                    backgroundColor: "#EBE8FC", 
+                    borderRadius: 2, 
+                    height: "fit-content" 
+                }}
+            >
+                <Typography
+                    variant="h4"
+                    sx={{ 
+                        mb: 3, 
+                        textDecorationLine: "underline" 
+                    }}
+                >
                     Job History
                 </Typography>
                 {jobHistory.map((job, index) => (
                     <>
                         <Typography
-                        variant="h6"
+                            variant="h6"
                             key={index}
-                            sx={{ 
-                                textAlign: "left", 
-                                ml: 2, 
-                                mt: 2, 
-                                textDecorationLine: "underline" 
+                            sx={{
+                                textAlign: "left",
+                                ml: 2,
+                                mt: 2,
+
+                                    
+                                textDecorationLine: "underline",
                             }}
                         >
                             {`${job.company}`}
                         </Typography>
                         <Typography
                             key={index}
-                            sx={{ textAlign: "left", ml: 2, mb: 2, display: "flex",
-                            flexDirection: "column", }}
+                            sx={{
+                                textAlign: "left",
+                                ml: 2,
+                                mb: 2,
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
                         >
                             {`${job.title}`}
                             <br></br>
@@ -66,28 +84,49 @@ const Resume = () => {
                     </>
                 ))}
             </Box>
-            <Box sx={{ border: 1, width: 350, textAlign: "center", pt: 2, }}>
-                <Typography variant="h5" sx={{ mb: 3 }}>
+            <Box 
+                sx={{ 
+                    border: 1, 
+                    width: 350, 
+                    textAlign: "center", 
+                    pt: 2, 
+                    backgroundColor: "#EBE8FC", 
+                    borderRadius: 2, 
+                    height: "fit-content" 
+                }}
+            >
+                <Typography
+                    variant="h4"
+                    sx={{ 
+                        mb: 3, 
+                        textDecorationLine: "underline" 
+                    }}
+                >
                     Education
                 </Typography>
                 {schoolHistory.map((school, index) => (
                     <>
                         <Typography
-                        variant="h6"
+                            variant="h6"
                             key={index}
-                            sx={{ 
-                                textAlign: "left", 
-                                ml: 2, 
-                                mt: 2, 
-                                textDecorationLine: "underline" 
+                            sx={{
+                                textAlign: "left",
+                                ml: 2,
+                                mt: 2,
+                                textDecorationLine: "underline",
                             }}
                         >
                             {`${school.name}`}
                         </Typography>
                         <Typography
                             key={index}
-                            sx={{ textAlign: "left", ml: 2, mb: 2, display: "flex",
-                            flexDirection: "column", }}
+                            sx={{
+                                textAlign: "left",
+                                ml: 2,
+                                mb: 2,
+                                display: "flex",
+                                flexDirection: "column",
+                            }}
                         >
                             {/* {`${job.title}`}
                             <br></br> */}
@@ -108,40 +147,61 @@ const Resume = () => {
                     pt: 2,
                     display: "flex",
                     flexDirection: "column",
+                    height: "fit-content"
                 }}
             >
                 <Box
                     sx={{
                         border: 1,
-                        height: "60%",
+                        borderRadius: 2,
+                        height: "fit-content",
                         width: 350,
                         mb: 2,
-                        flex: 1,
-                        textAlign: "center",
+                        // flex: 1,
+                        textAlign: "center", 
+                        backgroundColor: "#EBE8FC",
+                        
                     }}
                 >
-                    <Typography variant="h5" sx={{ mb: 3, }}>
+                    <Typography
+                        variant="h5"
+                        sx={{ 
+                            mb: 3, 
+                            textDecorationLine: "underline"
+                        }}
+                    >
                         {" "}
                         Skills{" "}
                     </Typography>
-                    <List>
-                    <ListItem sx={{ textAlign: "left", }}>
-                        <ListItemText sx={{  }}>
-                        Snowboarding, Backpacking
-                        </ListItemText>
-                    </ListItem>
-                    </List>
+                    <Typography sx={{ fontSize: "16px" }}
+                    // variant="body1"
+                    >
+                    {skillsHobbys.map((item, index) => (
+                        <List key={index} dense={dense} sx={{ fontSize: "16px" }}>
+                            {item.skillsArray.map((skill, skillIndex) => (
+                                <ListItem key={skillIndex} sx={{ fontSize: "16px" }}>
+                                    <ListItemText primary={skill} sx={{ fontSize: "16px" }} />
+                                </ListItem>
+                            ))}
+                        </List>
+                    ))}
+                    </Typography>
                 </Box>
                 <Box
                     sx={{
                         border: 1,
-                        height: "40%",
+                        borderRadius: 2,
+                        height: "fit-content",
                         width: 350,
                         flex: 2,
-                        textAlign: "center",
+                        textAlign: "center", 
+                        backgroundColor: "#EBE8FC",
                     }}
                 >
-                    <Typography variant="h5" sx={{ mb: 3 }}>
+                    <Typography
+                        variant="h5"
+                        sx={{ mb: 3, textDecorationLine: "underline" }}
+                    >
                         {" "}
                         Interests & Hobbies{" "}
                     </Typography>

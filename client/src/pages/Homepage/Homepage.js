@@ -13,6 +13,15 @@ const Homepage = () => {
                     width: "100%",
                     mb: 1,
                     mt: 1,
+                    // [theme.breakpoints.up("tablet")]: {
+                    //     padding: 30,
+                    // },
+                    // [theme.breakpoints.up("laptop")]: {
+                    //     padding: 40,
+                    // },
+                    // [theme.breakpoints.up("desktop")]: {
+                    //     padding: 50,
+                    // },
                 }}
             >
                 {path === "/" && <About />}

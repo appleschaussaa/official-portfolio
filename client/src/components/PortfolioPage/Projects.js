@@ -61,12 +61,13 @@ const Project = () => {
           <Card
             variant="outlined"
             sx={{
-              height: expandedIndexes.includes(index) ? 500 : 400,
+              // height: expandedIndexes.includes(index) ? 500 : 400,
               width: 550,
               border: 1,
               boxShadow: "10px -5px 5px black",
               display: "flex",
               flexDirection: "column",
+              backgroundColor: "#EBE8FC",
             }}
           >
             <CardMedia
@@ -80,7 +81,8 @@ const Project = () => {
               sx={{
                 maxHeight: 300,
                 overflow: "auto",
-                background: "#483D8B85",
+                // background: "#483D8B85",
+                backgroundColor: "#EBE8FC",
               }}
             >
               <Typography paragraph>
@@ -92,7 +94,8 @@ const Project = () => {
               sx={{
                 marginTop: "auto",
                 height: 30,
-                background: "#483D8B85",
+                // background: "#483D8B85",
+                backgroundColor: "#EBE8FC",
                 m: -1
               }}
             >
@@ -101,6 +104,7 @@ const Project = () => {
                 onClick={() => handleExpandClick(index)}
                 aria-expanded={expandedIndexes.includes(index)}
                 aria-label="show more"
+                sx={{ backgroundColor: "#EBE8FC", }}
               >
                 <ExpandMoreIcon />
               </ExpandMore>
@@ -113,9 +117,15 @@ const Project = () => {
                 maxHeight: expandedIndexes.includes(index) ? "90%" : 0,
                 overflow: "hidden",
                 transition: "max-height 0.3s ease-out",
+                // backgroundColor: "#EBE8FC",
               }}
             >
-              <CardContent sx={{ backgroundColor: "#483D8B85", }}>
+              <CardContent 
+                sx={{ 
+                  // backgroundColor: "#483D8B85",
+                  backgroundColor: "#EBE8FC", 
+                }}
+              >
                 <Typography paragraph>{project.fulltext}</Typography>
               </CardContent>
             </Collapse>

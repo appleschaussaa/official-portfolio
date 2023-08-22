@@ -21,6 +21,7 @@ const Footer = () => {
                 border: 2,
                 borderBottom: 0,
                 borderColor: "#ffff",
+                boxShadow: -20,
             }} 
             // component="footer"
         >

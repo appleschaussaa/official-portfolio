@@ -1,88 +1,131 @@
 import React from "react";
 import { Box, Container, Typography, Paper, Avatar } from "@mui/material";
 import Selfie from "../../static/images/bootcamp-selfie.jpg";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../../utils/Theme";
 
 const About = () => {
     return (
         <>
-            <Container
-                sx={{
-                    borderRadius: 3,
-                    alignItems: "top",
-                    height: "80vh",
-                    width: "80%",
-                }}
-            >
-                <Box
+            <ThemeProvider theme={theme}>
+                <Container
                     sx={{
-                        display: "flex",
-                        height: 500,
-                        spacing: 0,
-                        border: 2,
+                        borderRadius: 3,
+                        alignItems: "top",
+                        height: "70vh",
+                        width: "80%",
                     }}
                 >
                     <Box
                         sx={{
-                            height: "90%",
-                            width: "40%",
                             display: "flex",
-                            flexDirection: "column",
-                            justifyContent: "center",
-                            m: 1,
-                            mt: 4,
+                            height: 500,
+                            spacing: 0,
                             border: 2,
-                            borderRadius: 2,
-                            pt: 5,
-                            px: 2,
-                            //   backgroundColor: "#EBE8FC",
                         }}
                     >
-                        <Typography
-                            variant="h6"
+                        <Box
                             sx={{
-                                boxShadow: 2,
-                                backgroundColor: "#EBE8FC",
-                                p: 2,
-                                outline: "double",
-                                outlineColor: "#C7B6DC",
-                                outlineWidth: 12,
+                                height: "90%",
+                                width: "38%",
+                                display: "flex",
+                                position: "relative",
+                                top: 40,
+                                flexDirection: "column",
+                                justifyContent: "center",
+                                // m: 1,
+                                // mt: 4,
+                                ml: 3,
+                                border: 2,
                                 borderRadius: 2,
-                                
+                                // pt: 5,
+                                // px: 2,
+                                //   backgroundColor: "#EBE8FC",
                             }}
                         >
-                                Lorem ipsum, dolor sit amet consectetur
-                                adipisicing elit. Ea nostrum explicabo
-                                accusantium, et illum officiis tempore
-                                laboriosam vero adipisci facere in earum
-                                deleniti ratione nisi, esse consequuntur aliquam
-                                suscipit enim! Commodi culpa nam maxime quidem,
-                                at optio eos asperiores reprehenderit, a minima
-                                accusantium rerum, reiciendis molestiae esse
-                                expedita suscipit error? Lorem ipsum, dolor sit
-                                amet consectetur suscipit enim!Commodi culpa nam
-                                maxime quidem, at optio eos asperiores
-                                reprehenderit, a minima accusantium rerum,
-                                reiciendis molestiae esse expedita suscipit
-                                error? Lorem ipsum, dolor sit amet consectetur
-                        </Typography>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    boxShadow: 2,
+                                    backgroundColor: "#EBE8FC",
+                                    p: 2,
+                                    outline: "double",
+                                    outlineColor: "#C7B6DC",
+                                    outlineWidth: 12,
+                                    borderRadius: 2,
+                                }}
+                            >
+                                Welcome to my portfolio! Feel free to brows to
+                                learn more about me and reach out through one of
+                                the ways provided on my contact page
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    position: "relative",
+                                    top: 40,
+                                    left: 50,
+                                    boxShadow: 2,
+                                    backgroundColor: "#EBE8FC",
+                                    p: 2,
+                                    outline: "double",
+                                    outlineColor: "#C7B6DC",
+                                    outlineWidth: 12,
+                                    borderRadius: 2,
+                                }}
+                            >
+                                Lorem
+                                ipsum, dolor sit amet consectetur adipisicing
+                                elit. Ea nostrum explicabo accusantium, et illum
+                                officiis tempore laboriosam vero adipisci facere
+                                in earum deleniti ratione nisi
+                            </Typography>
+                            <Typography
+                                variant="body1"
+                                sx={{
+                                    position: "relative",
+                                    top: 80,
+                                    left: 100,
+                                    boxShadow: 2,
+                                    backgroundColor: "#EBE8FC",
+                                    p: 2,
+                                    outline: "double",
+                                    outlineColor: "#C7B6DC",
+                                    outlineWidth: 12,
+                                    borderRadius: 2,
+                                }}
+                            >
+                                Lorem
+                                ipsum, dolor sit amet consectetur adipisicing
+                                elit. Ea nostrum explicabo accusantium, et illum
+                                officiis tempore laboriosam vero adipisci facere
+                                in earum deleniti ratione nisi
+                            </Typography>
+                        </Box>
+                        {/* <Box sx={{ border: 2 }}> */}
+                        <Avatar
+                            alt="My portrait picture"
+                            src={Selfie}
+                            sx={{
+                                position: "relative",
+                                left: 160,
+                                width: 125,
+                                height: 200,
+                                m: 0,
+                                // mt: 3,
+                                ml: "170px",
+                                p: 2,
+                                border: 1, 
+                                boxShadow: 2,
+                                // backgroundColor: "#EBE8FC",
+                                // outline: "double",
+                                // outlineColor: "#C7B6DC",
+                            }}
+                        />
+                        {/* </Box> */}
                     </Box>
-                    <Box sx={{ border: 2 }}>
-                    <Avatar
-                        alt="My portrait picture"
-                        src={Selfie}
-                        sx={{
-                            width: 250,
-                            height: 290,
-                            m: 1,
-                            mt: 2,
-                            ml: "180px",
-                            p: 2,
-                            border: 1,
-                        }}
-                    />
-                    </Box>
-                </Box>
-            </Container>
+                </Container>
+            </ThemeProvider>
         </>
     );
 };
