@@ -38,7 +38,9 @@ const schoolHistory = [
 
 const skillsHobbys = [
     {
-        skillsArray: ["listening", "quick learner", "other stuff"]
+        skillsArray: ["listening", "quick learner", "other stuff"],
+        interestHobbyArray: ["snowboarding", "campingbackpacking", "gaming"]
+        
     }
 ]
 

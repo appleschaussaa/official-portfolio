@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import Icon from "@mdi/react";
 import { mdiGithub, mdiLinkedin, mdiEmailPlusOutline } from "@mdi/js";
 import {
@@ -12,8 +12,11 @@ import {
     ListItemText,
     Divider,
     Typography,
+    Modal,
+    Dialog
 } from "@mui/material";
 import { contactLinks } from "../../utils/ContactData";
+// import theme from "../../utils/Theme";
 
 const iconMappings = {
     email: mdiEmailPlusOutline,
@@ -22,14 +25,18 @@ const iconMappings = {
 };
 
 const Contact = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     return (
         <Container sx={{ pl: 15, pt: 10 }}>
             <Box
                 sx={{
                     height: "fit-content",
-                    width: 600,
+                    width: 200,
                     backgroundColor: "#EBE8FC",
                     boxShadow: 6,
+                    ml: 7
                     // border: 2,
                 }}
             >
@@ -41,7 +48,7 @@ const Contact = () => {
 
                         return (
                             <ListItem key={index}>
-                                <ListItemButton>
+                                <ListItemButton onClick={handleOpen}>
                                     <ListItemIcon>
                                         {label === "email" ? (
                                             <a
@@ -73,11 +80,19 @@ const Contact = () => {
                                                 />
                                             </Link>
                                         )}
+                                        <Dialog
+                                                open={open}
+                                                onClose={handleClose}
+                                                aria-labelledby="modal-modal-title"
+                                                aria-describedby="modal-modal-description"
+                                        >
+
+                                        </Dialog>
                                     </ListItemIcon>
                                     <ListItemText primary={label} />
-                                    <Typography>
+                                    {/* <Typography>
                                         Hello there
-                                    </Typography>
+                                    </Typography> */}
                                 </ListItemButton>
                             </ListItem>
                         );
