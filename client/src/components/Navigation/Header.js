@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
-import Breadcrumbs from "@mui/material/Breadcrumbs";
-import Link from "@mui/material/Link";
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Link, Breadcrumbs } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import theme from "../../utils/Theme";
 
 function handleClick(event) {
     // event.preventDefault();
@@ -30,73 +30,76 @@ const Header = () => {
 
     return (
         <>
-            <Box
-                className="Header"
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderBottomLeftRadius: 8,
-                    borderBottomRightRadius: 8,
-                    height: 65,
-                    width: "100%",
-                    mb: 2,
-                    backgroundColor: "#483D8B",
-                    border: 2,
-                    borderColor: "#C7B6DC",
-                    borderTop: 0,
-                    boxShadow: 6,
-                }}
-            >
-                <Breadcrumbs
-                    separator="›"
-                    color="#FDF5E6"
-                    aria-label="breadcrumb"
-                    onClick={handleClick}
-                    sx={{}}
-                >
-                    <Link underline="hover" color="white" href="/">
-                        <Typography>Home</Typography>
-                    </Link>
-                    <Link underline="hover" color="white" href="/portfolio">
-                        <Typography>Portfolio</Typography>
-                    </Link>
-                    <Link underline="hover" color="white" href="/resume">
-                        <Typography>Resume</Typography>
-                    </Link>
-                    <Link underline="hover" color="white" href="/contact">
-                        <Typography>Contact</Typography>
-                    </Link>
-                </Breadcrumbs>
-            </Box>
-            <Box
-                component="div"
-                sx={{
-                    // boxShadow: "11px -4px 8px black",
-                    boxShadow: 6,
-                    mb: 3,
-                    p: "-1px 1px 1px",
-                    borderRadius: 2,
-                }}
-            >
-                <Typography
-                    variant="h3"
-                    component="h3"
+            <ThemeProvider theme={theme}>
+                <Box
+                    className="Header"
                     sx={{
-                        display: "inline",
-                        textAlign: "center",
-                        textDecoration: "underline",
-                        textDecorationThickness: "4",
-                        color: "#483D8B",
-                        // border: 1,
-                        borderRadius: 2,
-                        p: 2,
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        borderBottomLeftRadius: 8,
+                        borderBottomRightRadius: 8,
+                        height: 65,
+                        width: "100%",
+                        mb: 2,
+                        backgroundColor: "primary.main",
+                        border: 2,
+                        borderColor: "#C7B6DC",
+                        borderTop: 0,
+                        boxShadow: 6,
                     }}
                 >
-                    {getTitle()}
-                </Typography>
-            </Box>
+                    <Breadcrumbs
+                        separator="›"
+                        color="primary.mainBackground"
+                        aria-label="breadcrumb"
+                        onClick={handleClick}
+                        sx={{}}
+                    >
+                        <Link underline="hover" color="primary.mainBackground" href="/">
+                            <Typography>Home</Typography>
+                        </Link>
+                        <Link underline="hover" color="primary.mainBackground" href="/portfolio">
+                            <Typography>Portfolio</Typography>
+                        </Link>
+                        <Link underline="hover" color="primary.mainBackground" href="/resume">
+                            <Typography>Resume</Typography>
+                        </Link>
+                        <Link underline="hover" color="primary.mainBackground" href="/contact">
+                            <Typography>Contact</Typography>
+                        </Link>
+                    </Breadcrumbs>
+                </Box>
+                <Box
+                    component="div"
+                    sx={{
+                        // boxShadow: "11px -4px 8px black",
+                        boxShadow: 6,
+                        mb: 3,
+                        p: "-1px 1px 1px",
+                        border: 1,
+                        borderRadius: 2,
+                    }}
+                >
+                    <Typography
+                        variant="h3"
+                        component="h3"
+                        sx={{
+                            display: "inline",
+                            textAlign: "center",
+                            textDecoration: "underline",
+                            textDecorationThickness: "4",
+                            color: "#483D8B",
+                            // border: 1,
+                            borderRadius: 2,
+                            p: 2,
+                        }}
+                    >
+                        {getTitle()}
+                    </Typography>
+                </Box>
+            </ThemeProvider>
         </>
     );
 };

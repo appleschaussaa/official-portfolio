@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  margin: 0;
 }
 
 .App-logo {
@@ -13,10 +14,10 @@
   }
 }
 
-.App-body {
+/* .App-body {
   background-color: #282c34;
   min-height: 90vh;
-}
+} */
 
 /* .Header {
   display: flex;
@@ -26,11 +27,11 @@
   background-color: #483D8B;
 } */
 
-.Footer {
+/* .Footer {
   align-items: right;
   justify-content: right;
   background-color: #483D8B;
-}
+} */
 
 .App-link {
   color: #61dafb;

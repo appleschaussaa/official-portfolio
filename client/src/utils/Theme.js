@@ -38,6 +38,9 @@ const theme = createTheme({
     palette: {
         primary: {
           main: "#483D8B", // Customize the primary color
+          mainBackground: "#FDF5E6",
+          boxBackground: "#EBE8FC",
+          outlines: "#C7B6DC"
         },
         backgroundColor: {
         //   default: "#FDF5E6", // Customize the default background color

@@ -1,8 +1,8 @@
 import React from "react";
 import { Box, Container, Typography, Paper, Avatar } from "@mui/material";
-import Selfie from "../../static/images/bootcamp-selfie.jpg";
 import { ThemeProvider } from "@mui/material/styles";
 import theme from "../../utils/Theme";
+import Selfie from "../../static/images/bootcamp-selfie.jpg";
 
 const About = () => {
     return (
@@ -47,11 +47,16 @@ const About = () => {
                                 variant="body1"
                                 sx={{
                                     boxShadow: 2,
-                                    backgroundColor: "#EBE8FC",
+                                    // backgroundColor: "#EBE8FC",
+                                    backgroundColor: "primary.boxBackground",
                                     p: 2,
                                     outline: "double",
+                                    // outlineStyle: "inset",
+                                    // outlineStyle: "groove",
                                     outlineColor: "#C7B6DC",
                                     outlineWidth: 12,
+                                    border: 1,
+                                    borderColor: "#483D8B",
                                     borderRadius: 2,
                                 }}
                             >
@@ -71,6 +76,8 @@ const About = () => {
                                     outline: "double",
                                     outlineColor: "#C7B6DC",
                                     outlineWidth: 12,
+                                    border: 1,
+                                    borderColor: "#483D8B",
                                     borderRadius: 2,
                                 }}
                             >
@@ -92,11 +99,12 @@ const About = () => {
                                     outline: "double",
                                     outlineColor: "#C7B6DC",
                                     outlineWidth: 12,
+                                    border: 1,
+                                    borderColor: "#483D8B",
                                     borderRadius: 2,
                                 }}
                             >
-                                Lorem
-                                ipsum, dolor sit amet consectetur adipisicing
+                                Lorem ipsum, dolor sit amet consectetur adipisicing
                                 elit. Ea nostrum explicabo accusantium, et illum
                                 officiis tempore laboriosam vero adipisci facere
                                 in earum deleniti ratione nisi

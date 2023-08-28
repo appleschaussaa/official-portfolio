@@ -141,8 +141,8 @@ const Resume = () => {
             <Box
                 sx={{
                     border: 1,
-                    // width: 350,
-                    width: 175,
+                    width: 350,
+                    // width: 175,
                     mx: 0,
                     px: 0,
                     pt: 2,
@@ -156,7 +156,7 @@ const Resume = () => {
                         border: 1,
                         borderRadius: 2,
                         height: "fit-content",
-                        width: 175,
+                        width: 350,
                         mb: 2,
                         // flex: 1,
                         textAlign: "center",
@@ -174,23 +174,29 @@ const Resume = () => {
                         Skills{" "}
                     </Typography>
                     <Typography
-                        variant="body1"
-                        sx={{ fontSize: "16px" }}
+                        // variant="body1"
+                        // sx={{ fontSize: "16px" }}
                         // variant="body1"
                     >
                         {skillsHobbys.map((item, index) => (
                             <div key={index}>
-                                <List dense={dense} sx={{ fontSize: "16px" }}>
+                                <List 
+                                    dense={dense} 
+                                    sx={{ fontSize: "16px" }}
+                                >
                                     {item.skillsArray.map(
                                         (skill, skillIndex) => (
                                             <ListItem
                                                 key={skillIndex}
-                                                sx={{ fontSize: "16px" }}
+                                                // sx={{ fontSize: "16px" }}
                                             >
-                                                <ListItemText
+                                                {/* <ListItemText
                                                     primary={skill}
                                                     sx={{ fontSize: "16px" }}
-                                                />
+                                                /> */}
+                                                <Typography>
+                                                    {skill}
+                                                </Typography>
                                             </ListItem>
                                         )
                                     )}
@@ -204,7 +210,7 @@ const Resume = () => {
                         border: 1,
                         borderRadius: 2,
                         height: "fit-content",
-                        width: 175,
+                        width: 350,
                         mb: 2,
                         // flex: 1,
                         textAlign: "center",
@@ -222,8 +228,8 @@ const Resume = () => {
                         Interests & Hobbies{" "}
                     </Typography>
                     <Typography
-                        variant="body1"
-                        sx={{ fontSize: "16px" }}
+                        // variant="body1"
+                        // sx={{ fontSize: "16px" }}
                         // variant="body1"
                     >
                         {skillsHobbys.map((item, index) => (
@@ -233,12 +239,15 @@ const Resume = () => {
                                         (interestHobby, interestHobbyIndex) => (
                                             <ListItem
                                                 key={interestHobbyIndex}
-                                                sx={{ fontSize: "16px" }}
+                                                // sx={{ fontSize: "16px" }}
                                             >
-                                                <ListItemText
-                                                    primary={interestHobby}
-                                                    sx={{ fontSize: "16px" }}
-                                                />
+                                                <Typography
+                                                    // primary={interestHobby}
+                                                    // sx={{ fontSize: "16px" }}
+                                                >
+                                                {interestHobby}
+                                                </Typography>
+
                                             </ListItem>
                                         )
                                     )}

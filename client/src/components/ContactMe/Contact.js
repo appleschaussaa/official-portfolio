@@ -10,13 +10,10 @@ import {
     ListItemButton,
     ListItemIcon,
     ListItemText,
-    Divider,
+    Popover,
     Typography,
-    Modal,
-    Dialog
 } from "@mui/material";
 import { contactLinks } from "../../utils/ContactData";
-// import theme from "../../utils/Theme";
 
 const iconMappings = {
     email: mdiEmailPlusOutline,
@@ -25,9 +22,19 @@ const iconMappings = {
 };
 
 const Contact = () => {
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [selectedLabel, setSelectedLabel] = React.useState(null);
+
+    const handleOpen = (event, label) => {
+        setSelectedLabel(label);
+        setAnchorEl(event.currentTarget);
+    };
+
+    const handleClose = () => {
+        setSelectedLabel(null);
+        setAnchorEl(null);
+    };
+
     return (
         <Container sx={{ pl: 15, pt: 10 }}>
             <Box
@@ -36,10 +43,11 @@ const Contact = () => {
                     width: 200,
                     backgroundColor: "#EBE8FC",
                     boxShadow: 6,
-                    ml: 7
-                    // border: 2,
+                    ml: 7,
+                    borderRadius: 2,
                 }}
-            >
+            >.
+            0
                 <List>
                     {contactLinks.map((contacts, index) => {
                         const label = Object.keys(contacts)[0];
@@ -48,12 +56,15 @@ const Contact = () => {
 
                         return (
                             <ListItem key={index}>
-                                <ListItemButton onClick={handleOpen}>
+                                <ListItemButton
+                                    onClick={(event) =>
+                                        handleOpen(event, label)
+                                    }
+                                >
                                     <ListItemIcon>
                                         {label === "email" ? (
                                             <a
                                                 href={`mailto:${link}`}
-                                                // href={`mailto:${contactLinks.email}`}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 color="inherit"
@@ -80,23 +91,39 @@ const Contact = () => {
                                                 />
                                             </Link>
                                         )}
-                                        <Dialog
-                                                open={open}
-                                                onClose={handleClose}
-                                                aria-labelledby="modal-modal-title"
-                                                aria-describedby="modal-modal-description"
-                                        >
-
-                                        </Dialog>
                                     </ListItemIcon>
                                     <ListItemText primary={label} />
-                                    {/* <Typography>
-                                        Hello there
-                                    </Typography> */}
                                 </ListItemButton>
+                                <Popover
+                                    open={
+                                        Boolean(anchorEl) &&
+                                        selectedLabel === label
+                                    }
+                                    anchorEl={anchorEl}
+                                    onClose={handleClose}
+                                    anchorOrigin={{
+                                        vertical: "bottom",
+                                        horizontal: "center",
+                                    }}
+                                    transformOrigin={{
+                                        vertical: "top",
+                                        horizontal: "center",
+                                    }}
+                                >
+                                    <Typography sx={{ p: 2, borderRadius: 2 }}>
+                                        {selectedLabel}:
+                                        {selectedLabel === "email"
+                                            ? " robertschauss91@gmail.com"
+                                            : selectedLabel === "github"
+                                            ? " https://github.com/appleschaussaa"
+                                            : selectedLabel === "linkedin"
+                                            ? " www.linkedin.com/in/robert-apple-schauss"
+                                            : null}
+                                    </Typography>
+                                </Popover>
                             </ListItem>
                         );
-                    })}
+                    })};
                 </List>
             </Box>
         </Container>

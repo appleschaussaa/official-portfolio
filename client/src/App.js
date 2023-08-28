@@ -24,14 +24,16 @@ const App = () => {
                 <Container
                     sx={{
                         minHeight: "100%",
-                        // width: "100vh",
+                        width: "100%",
                         display: "flex",
                         flexDirection: "column",
                         alignItems: "center",
-                        // backgroundColor: "#DCDCDC",
-                        backgroundColor: "#FDF5E6",
+                        backgroundColor: "#fceed4",
+                        // backgroundColor: "#FDF5E6",
+                        // backgroundColor: "#fbecce",
                         // backgroundColor: "#FAFAFA",
                         fontFamily: "Roboto Slab Bold",
+                        m:0
                     }}
                 >
                     <Header />
