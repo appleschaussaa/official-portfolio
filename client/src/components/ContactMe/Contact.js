@@ -13,7 +13,7 @@ import {
     Popover,
     Typography,
 } from "@mui/material";
-import { contactLinks } from "../../utils/ContactData";
+import { contactLinks } from "../../utils/ContactData.js";
 
 const iconMappings = {
     email: mdiEmailPlusOutline,
@@ -36,7 +36,7 @@ const Contact = () => {
     };
 
     return (
-        <Container sx={{ pl: 15, pt: 10 }}>
+        <Container sx={{ pl: 14, pt: 8 }}>
             <Box
                 sx={{
                     height: "fit-content",
@@ -45,10 +45,10 @@ const Contact = () => {
                     boxShadow: 6,
                     ml: 7,
                     borderRadius: 2,
+                    // py: 1,
                 }}
-            >.
-            0
-                <List>
+            >
+                <List sx={{ py: 4 }}>
                     {contactLinks.map((contacts, index) => {
                         const label = Object.keys(contacts)[0];
                         const link = contacts[label];
@@ -92,7 +92,8 @@ const Contact = () => {
                                             </Link>
                                         )}
                                     </ListItemIcon>
-                                    <ListItemText primary={label} />
+                                    <ListItemText 
+                                        primary={label} />
                                 </ListItemButton>
                                 <Popover
                                     open={
@@ -111,9 +112,18 @@ const Contact = () => {
                                     }}
                                 >
                                     <Typography sx={{ p: 2, borderRadius: 2 }}>
-                                        {selectedLabel}:
-                                        {selectedLabel === "email"
+                                        {selectedLabel}
+                                        {/* {selectedLabel === "email"
                                             ? " robertschauss91@gmail.com"
+                                            : selectedLabel === "github"
+                                            ? " https://github.com/appleschaussaa"
+                                            : selectedLabel === "linkedin"
+                                            ? " www.linkedin.com/in/robert-apple-schauss"
+                                            : null} */}
+                                        {selectedLabel === "email"
+                                            ? contactLinks.find(
+                                                  (obj) => obj.email
+                                              ).email
                                             : selectedLabel === "github"
                                             ? " https://github.com/appleschaussaa"
                                             : selectedLabel === "linkedin"
@@ -123,7 +133,7 @@ const Contact = () => {
                                 </Popover>
                             </ListItem>
                         );
-                    })};
+                    })} 
                 </List>
             </Box>
         </Container>

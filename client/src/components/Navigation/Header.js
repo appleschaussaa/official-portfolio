@@ -57,28 +57,45 @@ const Header = () => {
                         onClick={handleClick}
                         sx={{}}
                     >
-                        <Link underline="hover" color="primary.mainBackground" href="/">
+                        <Link
+                            underline="hover"
+                            color="primary.mainBackground"
+                            href="/"
+                        >
                             <Typography>Home</Typography>
                         </Link>
-                        <Link underline="hover" color="primary.mainBackground" href="/portfolio">
+                        <Link
+                            underline="hover"
+                            color="primary.mainBackground"
+                            href="/portfolio"
+                        >
                             <Typography>Portfolio</Typography>
                         </Link>
-                        <Link underline="hover" color="primary.mainBackground" href="/resume">
+                        <Link
+                            underline="hover"
+                            color="primary.mainBackground"
+                            href="/resume"
+                        >
                             <Typography>Resume</Typography>
                         </Link>
-                        <Link underline="hover" color="primary.mainBackground" href="/contact">
+                        <Link
+                            underline="hover"
+                            color="primary.mainBackground"
+                            href="/contact"
+                        >
                             <Typography>Contact</Typography>
                         </Link>
                     </Breadcrumbs>
                 </Box>
                 <Box
-                    component="div"
+                    // component="div"
                     sx={{
                         // boxShadow: "11px -4px 8px black",
                         boxShadow: 6,
                         mb: 3,
-                        p: "-1px 1px 1px",
-                        border: 1,
+                        // p: "-1px 1px 5px",
+                        border: .1,
+                        borderColor: "#483D8B",
                         borderRadius: 2,
                     }}
                 >
@@ -94,6 +111,8 @@ const Header = () => {
                             // border: 1,
                             borderRadius: 2,
                             p: 2,
+                            // pb: 1
+                            // pb: 1
                         }}
                     >
                         {getTitle()}
