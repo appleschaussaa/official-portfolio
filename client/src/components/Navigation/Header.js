@@ -101,7 +101,6 @@ const Header = () => {
                 >
                     <Typography
                         variant="h3"
-                        component="h3"
                         sx={{
                             display: "inline",
                             textAlign: "center",

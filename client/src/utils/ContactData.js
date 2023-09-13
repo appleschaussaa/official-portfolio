@@ -9,7 +9,7 @@ const contactLinks = [
     linkedin: "https://www.linkedin.com/in/robert-schauss-316aa8132/"
   },
   {
-    others: "xbox.com sony.com"
+    others: "Playstation: appleschaussaa"
   }
 ];
 

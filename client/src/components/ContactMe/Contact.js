@@ -1,6 +1,11 @@
 import * as React from "react";
 import Icon from "@mdi/react";
-import { mdiGithub, mdiLinkedin, mdiEmailPlusOutline } from "@mdi/js";
+import {
+    mdiGithub,
+    mdiLinkedin,
+    mdiEmailPlusOutline,
+    // mdiContentCopy,
+} from "@mdi/js";
 import {
     Box,
     Container,
@@ -12,8 +17,10 @@ import {
     ListItemText,
     Popover,
     Typography,
+    IconButton,
 } from "@mui/material";
 import { contactLinks } from "../../utils/ContactData.js";
+import { CopyToClipboardButton } from "../Index"
 
 const iconMappings = {
     email: mdiEmailPlusOutline,
@@ -24,6 +31,7 @@ const iconMappings = {
 const Contact = () => {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [selectedLabel, setSelectedLabel] = React.useState(null);
+    // const textElementRef = React.useRef(null);
 
     const handleOpen = (event, label) => {
         setSelectedLabel(label);
@@ -35,8 +43,26 @@ const Contact = () => {
         setAnchorEl(null);
     };
 
+    // const copybutton = () => {
+    //     const textElement = textElementRef.current;
+
+    //     if (textElement) {
+    //         const range = document.createRange();
+    //         range.selectNode(textElement);
+
+    //         window.getSelection().removeAllRanges();
+    //         window.getSelection().addRange(range);
+
+    //         document.execCommand("copy");
+
+    //         window.getSelection().removeAllRanges();
+
+    //         alert("Text copied to clipboard!");
+    //     }
+    // };
+
     return (
-        <Container sx={{ pl: 14, pt: 8 }}>
+        <Container sx={{ pl: 20, pt: 8, border: 1 }}>
             <Box
                 sx={{
                     height: "fit-content",
@@ -45,6 +71,7 @@ const Contact = () => {
                     boxShadow: 6,
                     ml: 7,
                     borderRadius: 2,
+                    border: 1,
                     // py: 1,
                 }}
             >
@@ -92,8 +119,16 @@ const Contact = () => {
                                             </Link>
                                         )}
                                     </ListItemIcon>
-                                    <ListItemText 
-                                        primary={label} />
+                                    <ListItemText
+                                        // component={Typography}
+                                        // variant="h6"
+                                        // primary={label}
+                                        primary={
+                                            <Typography sx={{}} variant="h5">
+                                                {label}
+                                            </Typography>
+                                        }
+                                    />
                                 </ListItemButton>
                                 <Popover
                                     open={
@@ -110,9 +145,14 @@ const Contact = () => {
                                         vertical: "top",
                                         horizontal: "center",
                                     }}
+                                    sx={{ display: "flex", flexDirection: "row" }}
                                 >
-                                    <Typography sx={{ p: 2, borderRadius: 2 }}>
-                                        {selectedLabel}
+                                    <Typography
+                                        variant="h6"
+                                        sx={{ p: 2, borderRadius: 2 }}
+                                        // ref={textElementRef}
+                                    >
+                                        {/* {selectedLabel} */}
                                         {/* {selectedLabel === "email"
                                             ? " robertschauss91@gmail.com"
                                             : selectedLabel === "github"
@@ -125,15 +165,33 @@ const Contact = () => {
                                                   (obj) => obj.email
                                               ).email
                                             : selectedLabel === "github"
-                                            ? " https://github.com/appleschaussaa"
+                                            ? contactLinks.find(
+                                                  (obj) => obj.github
+                                              ).github
                                             : selectedLabel === "linkedin"
-                                            ? " www.linkedin.com/in/robert-apple-schauss"
+                                            ? contactLinks.find(
+                                                  (obj) => obj.linkedin
+                                              ).linkedin
+                                            : selectedLabel === "others"
+                                            ? contactLinks.find(
+                                                  (obj) => obj.others
+                                              ).others
                                             : null}
                                     </Typography>
+                                    {/* <IconButton onClick={copybutton}>
+                                        <Icon
+                                            alt="click to copy"
+                                            path={mdiContentCopy}
+                                            size={1}
+                                            font={1}
+                                        />
+                                        Click here to copy
+                                    </IconButton> */}
+                                    <CopyToClipboardButton />
                                 </Popover>
                             </ListItem>
                         );
-                    })} 
+                    })}
                 </List>
             </Box>
         </Container>

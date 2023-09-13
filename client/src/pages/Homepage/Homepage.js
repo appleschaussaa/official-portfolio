@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@mui/material";
-import { About, Contact, Portfolio, Resume } from "../../components/Route/index";
+import { About, Contact, Portfolio, Resume } from "../../components/Index/index";
 
 const Homepage = () => {
     let path = window.location.pathname;

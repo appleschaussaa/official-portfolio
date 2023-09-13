@@ -1,7 +1,7 @@
 import * as React from "react";
 // import PropTypes from "prop-types";
 import "./App.css";
-import { Header, Footer } from "./components/Route/index";
+import { Header, Footer } from "./components/Index/index";
 import Homepage from "./pages/Homepage/Homepage";
 import { Container, Box } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
